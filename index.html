@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <table>
+            <tr>
+                <td>
+                    <label for="bilangan1">Input Bilangan 1</label>
+                </td>
+
+                <td>
+                    <input type="number" id="bilangan1" placeholder="Input Bilangan 1">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="bilangan2">Input Bilangan 2</label>
+                </td>
+
+                <td>
+                    <input type="number" id="bilangan2" placeholder="Input Bilangan 2">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+            
+                <td>
+                    <button onclick="hitung('+')">+</button>
+
+                    <button onclick="hitung('-')">-</button>
+
+                    <button onclick="hitung('*')">*</button>
+
+                    <button onclick="hitung('/')">/</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="output">Output</label>
+                </td>
+
+                <td>
+                    <p id="hasil"></p>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <script>
+        function hitung(operasi) {
+            let bilangan1 = Number(document.getElementById("bilangan1").value);
+            let bilangan2 = Number(document.getElementById("bilangan2").value);
+
+            if (operasi === "+") {
+            hasil = bilangan1 + bilangan2;
+            }
+
+            else if (operasi === "-") {
+            hasil = bilangan1 - bilangan2;
+            }
+
+            else if (operasi === "*") {
+            hasil = bilangan1 * bilangan2;
+            }
+
+            else if (operasi === "/"){
+                if (bilangan2 === 0){
+                    hasil = "Tidak dapat membagi dengan 0"
+                } else {
+                hasil = bilangan1 / bilangan2;
+                }
+            }
+
+            document.getElementById("hasil").innerHTML = hasil;
+        }
+    </script>
+</body>
+</html>
